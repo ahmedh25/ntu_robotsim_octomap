@@ -8,7 +8,7 @@ from launch.actions import DeclareLaunchArgument
 
 def generate_launch_description():
     return LaunchDescription([
-        # HINT: The point cloud topic from the Jetbot's RGB-D camera needs remapping to cloud_in
+        # The point cloud topic from the Jetbot's RGB-D camera needs remapping to cloud_in
         DeclareLaunchArgument('input_cloud_topic', default_value='/rgbd_camera/points'),
 
         DeclareLaunchArgument('resolution', default_value='0.10'),
@@ -23,8 +23,7 @@ def generate_launch_description():
 
         DeclareLaunchArgument('filter_speckles', default_value='True'),
 
-        # HINT: Start with conservative ground filter values and adjust if needed
-        # These are reset to original file structure but with 'filter_ground' enabled
+
         DeclareLaunchArgument('ground_filter/distance', default_value='0.1'),
         DeclareLaunchArgument('ground_filter/angle', default_value='0.7'),
         DeclareLaunchArgument('ground_filter/plane_distance', default_value='0.4'),
@@ -49,7 +48,7 @@ def generate_launch_description():
             package='octomap_server2',
             executable='octomap_server',
             output='screen',
-            # HINT: The point cloud topic needs to be remapped to cloud_in
+
             remappings=[('cloud_in', LaunchConfiguration('input_cloud_topic'))],
             parameters=[{'resolution': LaunchConfiguration('resolution'),
                          'frame_id': LaunchConfiguration('frame_id'),
