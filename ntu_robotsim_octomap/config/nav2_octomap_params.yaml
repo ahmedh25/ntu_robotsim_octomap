@@ -205,7 +205,7 @@ global_costmap:
   global_costmap:
     ros__parameters:
       use_sim_time: True
-      global_frame: odom               # Set to odom to match OctoMap projection
+      global_frame: map               # Set to odom to match OctoMap projection
       robot_base_frame: base_link
       robot_radius: 0.22
       resolution: 0.05
@@ -227,10 +227,12 @@ global_costmap:
         map_subscribe_transient_local: True
         map_topic: "/projected_map"     # REQUIREMENT: Link to OctoMap output stream
         enabled: True
+        subscribe_to_updates: True
 
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
+        combination_method: 1
         observation_sources: camera_scan
         camera_scan:
           topic: /rgbd_camera/points

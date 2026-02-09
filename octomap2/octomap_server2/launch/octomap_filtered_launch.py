@@ -24,8 +24,8 @@ def generate_launch_description():
         DeclareLaunchArgument('filter_speckles', default_value='True'),
 
 
-        DeclareLaunchArgument('ground_filter/distance', default_value='0.1'),
-        DeclareLaunchArgument('ground_filter/angle', default_value='0.7'),
+        DeclareLaunchArgument('ground_filter/distance', default_value='0.04'),
+        DeclareLaunchArgument('ground_filter/angle', default_value='0.15'),
         DeclareLaunchArgument('ground_filter/plane_distance', default_value='0.4'),
 
         DeclareLaunchArgument('compress_map', default_value='True'),
