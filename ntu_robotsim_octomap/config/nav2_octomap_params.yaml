@@ -224,7 +224,7 @@ global_costmap:
 
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
-        map_subscribe_transient_local: True
+        map_subscribe_transient_local: False
         map_topic: "/projected_map"     # REQUIREMENT: Link to OctoMap output stream
         enabled: True
         subscribe_to_updates: True
