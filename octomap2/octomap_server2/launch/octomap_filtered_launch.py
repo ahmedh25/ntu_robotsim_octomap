@@ -106,6 +106,9 @@ def generate_launch_description():
         DeclareLaunchArgument('ground_filter/angle', default_value='0.15'),
         DeclareLaunchArgument('ground_filter/plane_distance', default_value='0.4'),
 
+        DeclareLaunchArgument('occupancy_min_z', default_value='0.1'),  # Ignore everything below 10cm
+        DeclareLaunchArgument('occupancy_max_z', default_value='1.0'),  # Ignore everything above 1m
+
 
         DeclareLaunchArgument('compress_map', default_value='True'),
         DeclareLaunchArgument('incremental_2D_projection', default_value='True'),
@@ -144,6 +147,11 @@ def generate_launch_description():
                 'ground_filter/distance': LaunchConfiguration('ground_filter/distance'),
                 'ground_filter/angle': LaunchConfiguration('ground_filter/angle'),
                 'ground_filter/plane_distance': LaunchConfiguration('ground_filter/plane_distance'),
+
+                'occupancy_min_z': LaunchConfiguration('occupancy_min_z'),
+                'occupancy_max_z': LaunchConfiguration('occupancy_max_z'),
+
+
                 'compress_map': LaunchConfiguration('compress_map'),
                 'incremental_2D_projection': LaunchConfiguration('incremental_2D_projection'),
                 'sensor_model/max_range': LaunchConfiguration('sensor_model/max_range'),
